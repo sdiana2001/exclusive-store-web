@@ -1,0 +1,47 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*  Убираем плавный скролл при кликах по якорям и убираем стандартные списки */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 4. Настраиваем картинки для предотвращения переполнения блоков */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/*  Наследуем шрифты для форм и убираем дефолтные рамки */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
