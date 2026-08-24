@@ -1,9 +1,9 @@
-import React from 'react';
-import { Timer } from '@/components/Timer/Timer';
+import React, { useMemo } from 'react';
 import { ProductCard, type Product } from '@/components/ProductCard/ProductCard';
+import { Timer } from '@/components/Timer/Timer';
+import { useCountdown } from '@/hooks/useCountdown';
 import styles from './FlashSalesSection.module.scss';
 
-// Твои локальные импорты картинок
 import gamepadImg from '@/assets/products/Gamepad.png';
 import keyboardImg from '@/assets/products/Keyboard.png';
 import monitorImg from '@/assets/products/Monitor.png';
@@ -53,6 +53,16 @@ const mockProducts: Product[] = [
 ];
 
 export const FlashSalesSection: React.FC = () => {
+  // Задаем конечную дату таймера (например, через 4 дня от текущего времени)
+  const targetDate = useMemo(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 4);
+    return date;
+  }, []);
+
+  // Получаем тикающие значения дней, часов, минут и секунд
+  const { days, hours, minutes, seconds } = useCountdown(targetDate);
+
   return (
     <section className={styles.flashSales}>
       <div className="container">
@@ -65,7 +75,7 @@ export const FlashSalesSection: React.FC = () => {
           <div className={styles.flashSales__header}>
             <div className={styles.flashSales__titleGroup}>
               <h2 className={styles.flashSales__title}>Flash Sales</h2>
-              <Timer days={3} hours={23} minutes={19} seconds={56} />
+              <Timer days={days} hours={hours} minutes={minutes} seconds={seconds} />
             </div>
 
             <div className={styles.flashSales__controls}>

@@ -11,42 +11,30 @@ interface TimerProps {
 export const Timer: React.FC<TimerProps> = ({ days, hours, minutes, seconds }) => {
   const pad = (num: number) => String(num).padStart(2, '0');
 
+  const timeUnits = [
+    { label: 'Days', value: pad(days) },
+    { label: 'Hours', value: pad(hours) },
+    { label: 'Minutes', value: pad(minutes) },
+    { label: 'Seconds', value: pad(seconds) },
+  ];
+
   return (
     <div className={styles.timer}>
-      <div className={styles.timer__item}>
-        <span className={styles.timer__label}>Days</span>
-        <span className={styles.timer__value}>{pad(days)}</span>
-      </div>
+      {timeUnits.map((unit, index) => (
+        <React.Fragment key={unit.label}>
+          <div className={styles.timer__item}>
+            <span className={styles.timer__label}>{unit.label}</span>
+            <span className={styles.timer__value}>{unit.value}</span>
+          </div>
 
-      <div className={styles.timer__dots}>
-        <span />
-        <span />
-      </div>
-
-      <div className={styles.timer__item}>
-        <span className={styles.timer__label}>Hours</span>
-        <span className={styles.timer__value}>{pad(hours)}</span>
-      </div>
-
-      <div className={styles.timer__dots}>
-        <span />
-        <span />
-      </div>
-
-      <div className={styles.timer__item}>
-        <span className={styles.timer__label}>Minutes</span>
-        <span className={styles.timer__value}>{pad(minutes)}</span>
-      </div>
-
-      <div className={styles.timer__dots}>
-        <span />
-        <span />
-      </div>
-
-      <div className={styles.timer__item}>
-        <span className={styles.timer__label}>Seconds</span>
-        <span className={styles.timer__value}>{pad(seconds)}</span>
-      </div>
+          {index < timeUnits.length - 1 && (
+            <div className={styles.timer__dots}>
+              <span />
+              <span />
+            </div>
+          )}
+        </React.Fragment>
+      ))}
     </div>
   );
 };
