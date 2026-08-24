@@ -1,0 +1,42 @@
+@import '@/app/styles/variables';
+
+.timer {
+  display: flex;
+  align-items: flex-end;
+  gap: 17px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__label {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    color: $color-black;
+  }
+
+  &__value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    color: $color-black;
+  }
+
+  &__dots {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 4px;
+
+    span {
+      width: 4px;
+      height: 4px;
+      background-color: $color-accent;
+      border-radius: 50%;
+    }
+  }
+}

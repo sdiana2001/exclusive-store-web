@@ -1,0 +1,130 @@
+@import '@/app/styles/variables';
+
+.card {
+  width: 270px;
+  flex-shrink: 0;
+
+  &__top {
+    width: 100%;
+    height: 250px;
+    background-color: $color-bg-light;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &:hover .card__buyBtn {
+      bottom: 0;
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: $color-accent;
+    color: $color-white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  &__actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__iconBtn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-white;
+    }
+  }
+
+  &__image {
+    max-width: 172px;
+    max-height: 152px;
+    object-fit: contain;
+  }
+
+  &__buyBtn {
+    position: absolute;
+    bottom: -41px;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    background-color: $color-black;
+    color: $color-white;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.25s ease;
+  }
+
+  &__info {
+    padding-top: 16px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: $color-black;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__prices {
+    display: flex;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  &__currentPrice {
+    color: $color-accent;
+  }
+
+  &__oldPrice {
+    color: $color-text-muted;
+    text-decoration: line-through;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__stars {
+    color: #ffad33;
+    font-size: 16px;
+  }
+
+  &__reviews {
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-text-muted;
+  }
+}

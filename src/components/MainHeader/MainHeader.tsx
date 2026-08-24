@@ -28,19 +28,19 @@ export const MainHeader: React.FC = () => {
           <div className={styles.header__search}>
             <input type="text" placeholder="What are you looking for?" />
             <button type="button" aria-label="Search">
-              <img src="../../assets/icons/Search.svg" alt="Search" />
+              <img src="/public/icons/Search.svg" alt="Search" />
             </button>
           </div>
 
           <div className={styles.header__iconGroup}>
             {/* Избранное */}
             <button className={styles.header__iconBtn} aria-label="Favorite">
-             <img src="../../assets/icons/Favorite.svg" alt="" />
+             <img src="/public/icons/Favorite.svg" alt="Favorite" />
             </button>
 
             {/* Корзина */}
             <button className={styles.header__iconBtn} aria-label="Cart">
-          <img src="../../assets/icons/Cart.svg" alt="Cart" />
+             <img src="/public/icons/Cart.svg" alt="Cart" />
             </button>
           </div>
         </div>

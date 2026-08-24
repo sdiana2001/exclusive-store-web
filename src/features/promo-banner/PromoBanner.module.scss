@@ -1,0 +1,86 @@
+@import '@/app/styles/variables';
+
+.banner {
+  background-color: $color-black;
+  color: $color-white;
+  padding: 40px 0 40px 64px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__content {
+    max-width: 300px;
+    z-index: 2;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__brand {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: 0.04em;
+    margin-bottom: 22px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid $color-white;
+    padding-bottom: 4px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__imageWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__image {
+    max-width: 496px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+
+    &_active {
+      background-color: $color-accent;
+      border: 2px solid $color-white;
+    }
+  }
+}
